@@ -15,7 +15,7 @@ if (app.Environment.IsDevelopment())
 }
 
 var v1Api = app.MapGroup("/api/v1");
-v1Api.MapGet("/getutcnow", () => DateTime.Now.ToString());
+v1Api.MapGet("/getutcnow", () => DateTime.UtcNow.ToString());
 
 var v2Api = app.MapGroup("/api/v2");
 v2Api.MapGet("/getnow", () => DateTime.Now.ToString());
