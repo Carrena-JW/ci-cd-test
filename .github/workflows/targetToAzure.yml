@@ -13,7 +13,7 @@ env:
 jobs:
   publish:
     runs-on: self-hosted
-    if: ${{ contains(github.event.head_commit.message, '#action' }}
+    if: ${{ contains(github.event.head_commit.message, '#action') }}
     steps:
       - uses: actions/checkout@v3
       
