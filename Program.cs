@@ -8,11 +8,11 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 
 var v1Api = app.MapGroup("/api/v1");
 v1Api.MapGet("/getutcnow", () => DateTime.UtcNow.ToString());
