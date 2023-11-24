@@ -17,13 +17,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # just run once beacuse using self-hosted 
-      # - name: Setup .NET
-      #   uses: actions/setup-dotnet@v3
-      #   with:
-      #     dotnet-version: '7.0.x'
-      #   env:
-      #     DOTNET_INSTALL_DIR: "./.dotnet"
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '7.0.x'
+        env:
+          DOTNET_INSTALL_DIR: "./.dotnet"
           
       - name: Restore
         run: dotnet restore ./WebApplication4.sln
