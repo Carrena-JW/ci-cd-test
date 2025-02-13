@@ -1,11 +1,11 @@
-# IIS À¥»çÀÌÆ® ÁßÁö
+# IIS ì›¹ì‚¬ì´íŠ¸ ì¤‘ì§€
 Import-Module WebAdministration
 Stop-WebAppPool -Name "TestSite"
 Stop-Website -Name "TestSite"
 
-# ¹èÆ÷ ÀÛ¾÷ (¿¹: ÆÄÀÏ º¹»ç)
-Copy-Item -Path "D:\98.publish\TestSite\*" -Destination "D:\99.workspace\TestSite" -Recurse -Force
+# ë°°í¬ ì‘ì—… (ì˜ˆ: íŒŒì¼ ë³µì‚¬)
+Copy-Item -Path "..\..\..\publish\*" -Destination "D:\99.workspace\TestSite" -Recurse -Force
 
-# IIS À¥»çÀÌÆ® ½ÃÀÛ
+# IIS ì›¹ì‚¬ì´íŠ¸ ì‹œì‘
 Start-WebAppPool -Name "TestSite"
 Start-Website -Name "TestSite"
