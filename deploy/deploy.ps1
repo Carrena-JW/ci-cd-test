@@ -1,11 +1,22 @@
-# IIS 웹사이트 중지
-Import-Module WebAdministration
-Stop-WebAppPool -Name "TestSite"
-Stop-Website -Name "TestSite"
+$logFilePath = "..\..\..\logs"
+ 
+Start-Transcript -Path $logFilePath
+ 
+try {
+    Import-Module WebAdministration
+    Stop-WebAppPool -Name "TestSite"
+    Stop-Website -Name "TestSite"
 
-# 배포 작업 (예: 파일 복사)
-Copy-Item -Path "..\..\..\publish\*" -Destination "D:\99.workspace\TestSite" -Recurse -Force
 
-# IIS 웹사이트 시작
-Start-WebAppPool -Name "TestSite"
-Start-Website -Name "TestSite"
+    Copy-Item -Path "..\..\..\publish\*" -Destination "D:\99.workspace\TestSite" -Recurse -Force
+
+
+    Start-WebAppPool -Name "TestSite"
+    Start-Website -Name "TestSite"
+
+}
+catch {
+    Write-Error "An error occurred: $_"
+}
+ 
+Stop-Transcript
