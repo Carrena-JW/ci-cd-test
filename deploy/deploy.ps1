@@ -15,7 +15,7 @@ try {
         Stop-Website -Name "TestSite"
     }
 
-    Copy-Item -Path "..\..\..\publish\*" -Destination "D:\99.workspace\TestSite" -Recurse -Force
+    Copy-Item -Path "..\..\publish\*" -Destination "D:\99.workspace\TestSite" -Recurse -Force
 
     Start-WebAppPool -Name "TestSite"
     Start-Website -Name "TestSite"
