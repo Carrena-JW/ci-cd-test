@@ -4,12 +4,18 @@ Start-Transcript -Path $logFilePath
  
 try {
     Import-Module WebAdministration
-    Stop-WebAppPool -Name "TestSite"
-    Stop-Website -Name "TestSite"
 
+    if((Get-WebAppPoolState "TestSite").Value -ne "Stopped")
+    {
+        Stop-WebAppPool -Name "TestSite"
+    }
+    
+    if((Get-WebsiteState "TestSite").Value -ne "Stopped")
+    {
+        Stop-Website -Name "TestSite"
+    }
 
     Copy-Item -Path "..\..\..\publish\*" -Destination "D:\99.workspace\TestSite" -Recurse -Force
-
 
     Start-WebAppPool -Name "TestSite"
     Start-Website -Name "TestSite"
