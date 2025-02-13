@@ -27,4 +27,4 @@ jobs:
 
     - name: Run deployment script
       run: .\deploy\deploy.ps1
-      working-directory: ./src
+    
