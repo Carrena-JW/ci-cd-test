@@ -22,7 +22,7 @@ jobs:
       working-directory: ./src
 
     - name: Publish the project
-      run: dotnet publish --configuration Release --output .\publish
+      run: dotnet publish --configuration Release --output ..\..\publish
       working-directory: ./src
 
     - name: Run deployment script with elevated privileges
