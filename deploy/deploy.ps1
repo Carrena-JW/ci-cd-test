@@ -15,6 +15,8 @@ try {
         Stop-Website -Name "TestSite" -Force
     }
 
+    Start-Sleep -Seconds 30
+
     Copy-Item -Path "..\..\publish\*" -Destination "D:\99.workspace\TestSite" -Recurse -Force
 
     Start-WebAppPool -Name "TestSite"
