@@ -25,4 +25,3 @@ v2Api.MapGet("/test", () =>  "Updated 2025-02-13 22:15");
 app.Run();
 
 
-http://localhost/api/v2/getnow
