@@ -19,12 +19,12 @@ jobs:
 
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: .\ci-cd-test\ci-cd-test\src
+      working-directory: ./src
 
     - name: Publish the project
       run: dotnet publish --configuration Release --output .\publish
-      working-directory: .\ci-cd-test\ci-cd-test\src
+      working-directory: ./src
 
     - name: Run deployment script
       run: .\deploy\deploy.ps1
-      working-directory: .\ci-cd-test\ci-cd-test\src
+      working-directory: ./src
