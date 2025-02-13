@@ -1,4 +1,4 @@
-$logFilePath = "..\..\..\logs"
+$logFilePath = "..\..\..\logs\action.log"
  
 Start-Transcript -Path $logFilePath
  
