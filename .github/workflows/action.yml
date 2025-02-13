@@ -26,5 +26,5 @@ jobs:
       working-directory: ./src
 
     - name: Run deployment script with elevated privileges
-      run: Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File .\deploy\deploy.ps1" -Verb 
+      run: Start-Process powershell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File .\deploy\deploy.ps1" -Verbose
     
