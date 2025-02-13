@@ -20,5 +20,9 @@ v1Api.MapGet("/getutcnow", () => DateTime.UtcNow.ToString());
 var v2Api = app.MapGroup("/api/v2");
 v2Api.MapGet("/getnow", () => DateTime.Now.ToString());
 
+v2Api.MapGet("/test", () =>  "Updated 2025-02-13 22:15");
+
 app.Run();
- 
+
+
+http://localhost/api/v2/getnow
