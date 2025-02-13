@@ -7,15 +7,15 @@ try {
 
     if((Get-WebAppPoolState "TestSite").Value -ne "Stopped")
     {
-        Stop-WebAppPool -Name "TestSite" -Force
+        Stop-WebAppPool -Name "TestSite" 
     }
     
     if((Get-WebsiteState "TestSite").Value -ne "Stopped")
     {
-        Stop-Website -Name "TestSite" -Force
+        Stop-Website -Name "TestSite" 
     }
 
-    Start-Sleep -Seconds 30
+    Start-Sleep -Seconds 20
 
     Copy-Item -Path "..\..\publish\*" -Destination "D:\99.workspace\TestSite" -Recurse -Force
 
